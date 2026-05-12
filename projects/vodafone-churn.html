@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vodafone Customer Churn Prediction - Bidush Sarker</title>
+  <meta name="description" content="End-to-end ML project predicting telecom customer churn using XGBoost with SHAP explainability." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">bidush.</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#education">Education</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="project-page">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link">← Back to all projects</a>
+
+      <div class="project-hero">
+        <div class="project-hero-image contain" style="background: linear-gradient(135deg, #e60000 0%, #990000 100%);">
+          <img src="../images/vodafone-thumb.jpg" alt="Vodafone">
+        </div>
+        <h1 class="project-h1">Vodafone Customer <span class="accent">Churn Prediction</span></h1>
+        <p class="project-subtitle">An end-to-end machine learning project predicting which telecom customers are likely to leave, with explainable AI to drive retention strategy.</p>
+        <div class="project-meta-tags">
+          <span class="project-meta-tag">Machine Learning</span>
+          <span class="project-meta-tag">XGBoost</span>
+          <span class="project-meta-tag">SHAP</span>
+          <span class="project-meta-tag">Flask REST API</span>
+          <span class="project-meta-tag">Python</span>
+          <span class="project-meta-tag">SMOTE</span>
+        </div>
+      </div>
+
+      <div class="project-content">
+        <article class="project-main">
+
+          <h2>Project Overview</h2>
+          <p>Customer churn (when subscribers leave a service) is a major issue for telecom companies like Vodafone. Retaining existing customers is <strong>5x cheaper than acquiring new ones</strong>.</p>
+          <p>This project applies data science and machine learning to predict customer churn, helping Vodafone identify at-risk customers early and act with retention strategies. I built this project end-to-end: from data preprocessing and exploratory analysis to model development, explainability, and deployment.</p>
+
+          <h2>Tools & Technologies</h2>
+          <ul>
+            <li><strong>Languages & Libraries:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, XGBoost, SHAP</li>
+            <li><strong>Data Preprocessing:</strong> Missing value imputation, OneHotEncoding, SMOTE (balancing classes)</li>
+            <li><strong>Modeling:</strong> Logistic Regression, Random Forest, XGBoost</li>
+            <li><strong>Evaluation:</strong> ROC-AUC, Precision-Recall curves, Confusion Matrix, Classification Reports</li>
+            <li><strong>Explainability:</strong> SHAP values for local & global feature importance</li>
+            <li><strong>Deployment:</strong> Flask REST API, Joblib for model persistence</li>
+            <li><strong>Version Control & Documentation:</strong> Git/GitHub, Jupyter Notebooks, Markdown</li>
+          </ul>
+
+          <h2>Process & Methodology</h2>
+
+          <h3>1. Data Understanding & Cleaning</h3>
+          <ul>
+            <li><strong>Dataset:</strong> Vodafone Customer Churn dataset from Kaggle (~7,000 rows, 23 features)</li>
+            <li><strong>Target variable:</strong> Churn (1 = Yes, 0 = No)</li>
+            <li>Handled missing values (median for numerical, mode for categorical)</li>
+            <li>Encoded categorical variables using OneHotEncoding</li>
+            <li>Balanced dataset with SMOTE to avoid bias toward majority class</li>
+          </ul>
+
+          <h3>2. Exploratory Data Analysis (EDA)</h3>
+          <ul>
+            <li><strong>Churn Imbalance:</strong> 26% churners vs. 74% non-churners</li>
+            <li><strong>Tenure Effect:</strong> Shorter-tenure customers more likely to churn</li>
+            <li><strong>Charges:</strong> Higher monthly charges correlate with higher churn</li>
+            <li><strong>Contract Type:</strong> Month-to-month contracts are the riskiest</li>
+            <li><strong>Support Services:</strong> Lack of TechSupport/OnlineBackup increases churn risk</li>
+          </ul>
+
+          <h3>3. Model Development</h3>
+          <p><strong>Compared three models:</strong> Logistic Regression, Random Forest, and XGBoost (final choice).</p>
+          <ul>
+            <li>ROC-AUC ~0.92-0.93 across all models</li>
+            <li>Precision-Recall curves show XGBoost outperforming under imbalance</li>
+            <li>Confusion matrices & reports confirm balanced performance</li>
+          </ul>
+          <p><strong>Final chosen model: XGBoost</strong>, with threshold tuned to 0.6 for best trade-off between precision and recall.</p>
+
+          <h3>4. Explainability</h3>
+          <p>Used <strong>SHAP</strong> to identify drivers of churn. Key findings:</p>
+          <ul>
+            <li>Contract type (month-to-month contracts are highly risky)</li>
+            <li>Payment method (electronic check correlates with higher churn)</li>
+            <li>Tenure and monthly charges play major roles</li>
+            <li>Support services like TechSupport and OnlineBackup reduce churn risk</li>
+          </ul>
+
+          <h3>5. Deployment</h3>
+          <ul>
+            <li>Exported final pipeline as <strong>churn_pipeline_artifacts.joblib</strong></li>
+            <li>Built a <strong>Flask REST API</strong> endpoint <code>/predict</code> that accepts customer data in JSON and returns prediction (churn or not), probability score, and decision threshold used</li>
+          </ul>
+
+          <h2>Findings & Recommendations (Business Perspective)</h2>
+          <p><strong>Problem:</strong> Customer churn leads to revenue loss and lower customer lifetime value.</p>
+
+          <h3>Key Findings</h3>
+          <ul>
+            <li>Month-to-month customers are much more likely to churn</li>
+            <li>New customers (low tenure) are high-risk</li>
+            <li>Customers paying via electronic check are unstable compared to auto-pay</li>
+            <li>High monthly charges without value perception drive churn</li>
+            <li>Lack of add-on services (TechSupport, Backup) strongly correlates with churn</li>
+          </ul>
+
+          <h3>Recommendations</h3>
+          <ul>
+            <li>Incentivize long-term contracts with discounts/loyalty perks</li>
+            <li>Strengthen new customer onboarding to reduce early churn</li>
+            <li>Promote auto-pay to replace electronic checks</li>
+            <li>Reassess high-pricing models; bundle services to improve value perception</li>
+            <li>Offer free trials of support services to drive adoption</li>
+          </ul>
+
+          <h3>Business Impact</h3>
+          <p>By focusing retention strategies on these high-risk groups, Vodafone can <strong>reduce churn significantly, cut acquisition costs, and boost long-term profitability</strong>.</p>
+
+        </article>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-label">Role</div>
+            <div class="sidebar-value">Solo project (end-to-end)</div>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-label">Domain</div>
+            <div class="sidebar-value">Telecom / Customer Retention</div>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-label">Dataset</div>
+            <div class="sidebar-value">~7,000 customers, 23 features</div>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-label">Final Model</div>
+            <div class="sidebar-value">XGBoost (ROC-AUC ~0.93)</div>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-label">Skills</div>
+            <div class="sidebar-chips">
+              <span class="sidebar-chip">Python</span>
+              <span class="sidebar-chip">ML</span>
+              <span class="sidebar-chip">XGBoost</span>
+              <span class="sidebar-chip">SHAP</span>
+              <span class="sidebar-chip">Flask</span>
+              <span class="sidebar-chip">EDA</span>
+              <span class="sidebar-chip">SMOTE</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="project-final-cta">
+        <h3>Explore the full project</h3>
+        <p>Jump into the Jupyter notebooks, model code, and Flask API on GitHub.</p>
+        <a href="https://github.com/bidush-001" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Bidush Sarker · Built with care in Sydney · <a href="https://github.com/bidush-001" target="_blank" rel="noopener">github.com/bidush-001</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
