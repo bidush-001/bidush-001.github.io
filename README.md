@@ -1,52 +1,39 @@
-# Bidush Sarker Portfolio - 
+# Bidush Sarker | Portfolio
 
-## What's inside
+> Data & Business Analyst based in Sydney, Australia.
 
-```
-portfolio/
-├── index.html                         ← Main landing page
-├── styles.css                         ← Shared styles for ALL pages
-├── images/                            ← All thumbnails & screenshots
-│   ├── ba-thumb.png
-│   ├── intl-student-thumb.png
-│   ├── mental-health-thumb.png
-│   ├── powerbi-profit.png
-│   ├── powerbi-sales.png
-│   ├── powerbi-thumb.png
-│   └── vodafone-thumb.jpg
-└── projects/                          ← Individual project case studies
-    ├── british-airways.html
-    ├── intl-student.html
-    ├── powerbi-sales.html
-    ├── student-mental-health.html
-    └── vodafone-churn.html
-```
+Personal portfolio website showcasing experience, projects, and certifications across data analytics, business analysis, and process design.
 
-## How to deploy to GitHub Pages
+## Live Site
 
-### Step 1: Clean out your existing repo
+Visit the portfolio at: **[bidush-001.github.io](https://bidush-001.github.io)**
 
-1. Go to `github.com/bidush-001/bidush-001.github.io`
-2. Click on `index.html`
-3. Click the trash icon (top-right) to delete it
-4. Commit the deletion
+## About
 
-### Step 2: Upload the new files
+A modern, fully responsive single-page portfolio built as a static site for fast loading and easy maintenance. Includes individual case study pages for every featured project.
 
-1. Back at the main repo page, click **Add file → Upload files**
-2. Open the unzipped `portfolio` folder on your computer
-3. Select EVERYTHING inside (index.html, styles.css, the `images/` folder, and the `projects/` folder) and drag it all into the upload area
-4. GitHub will preserve the folder structure
-5. Scroll down, write commit message: `Add project detail pages`
-6. Click **Commit changes**
+## Featured Projects
 
-### Step 3: Wait & visit
+| Project | Stack | Domain |
+|---------|-------|--------|
+| Vodafone Customer Churn Prediction | Python, XGBoost, SHAP, Flask | Telecom |
+| International Student Enrolment Dashboard | Excel, BPMN | Higher Education |
+| Interactive Sales Performance Dashboard | Power BI, DAX | Retail |
+| British Airways Customer Reviews | Tableau | Aviation |
+| Student Mental Health & Academic Success | Python, EDA, Clustering | Research |
 
-Wait ~1 minute, then visit `https://bidush-001.github.io`
+## Tech Stack
 
-## How to edit later
+* HTML5, CSS3, vanilla JavaScript
+* Google Fonts (Fraunces, Manrope)
+* Hosted on GitHub Pages
 
-- **Small text edits:** Edit files directly on GitHub (pencil icon)
-- **Update a project URL:** Open `projects/[name].html`, find the link, edit, commit
-- **Add new screenshots:** Upload image to `images/`, then reference it in the HTML
-- **Style changes:** Edit `styles.css` once and it updates every page
+## Contact
+
+* Email: bidush.sarkers99@gmail.com
+* LinkedIn: [linkedin.com/in/bidush-sarker-0323841b0](https://www.linkedin.com/in/bidush-sarker-0323841b0)
+* GitHub: [github.com/bidush-001](https://github.com/bidush-001)
+
+***
+
+Copyright 2026 Bidush Sarker. All rights reserved.
