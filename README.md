@@ -1,4 +1,4 @@
-# Bidush Sarker Portfolio - v2
+# Bidush Sarker Portfolio - 
 
 ## What's inside
 
